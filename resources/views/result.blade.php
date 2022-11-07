@@ -9,24 +9,36 @@
     <title></title>
 </head>
 
-<body class="d-flex align-items-center" style="height: 100vh">
-    <div class="d-flex justify-content-center" style="width: 100%">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <div class="d-flex justify-content-center">
-                    <h5 class="card-title">
-                        @if ($color === "red")
-                            Have a nice day :>
-                         @elseif ($color === "blue")
-                            Good Luck!
-                         @else
-                            Have fun
-                        @endif
-                      </h5>
-                </div>
-            </div>
+<body class="d-flex align-items-center justify-content-center text-bg-secondary" style="height: 100vh">
+    <div class="card" style="width: 18rem;">
+        @if($color == "red")
+            <img src="{{asset('img/warning.png.png')}}" class="card-img-top" alt="...">
+        @elseif ($color == "blue")
+            <img src="{{asset('img/have a nice day.jpg')}}" class="card-img-top" alt="">
+        @else
+            <img src="{{asset('img/normal.png')}}" alt="">
+        @endif
+        <div class="card-body text-bg-light">
+          <h5 class="card-title" style="text-align: center">
+            @if ($color == "red")
+                Stay Safe
+            @elseif ($color == "blue")
+                Amazing
+            @else
+                So-so
+            @endif
+          </h5>
+          <p class="card-text" style="text-align: center">
+            @if ($color == "red")
+                Luck is not on your side today!
+            @elseif ($color == "blue")
+                You will have a nice day :>
+            @else
+                Today will be a normal for you.
+            @endif
+          </p>
+          <a href="/" class="btn btn-primary d-flex justify-content-center">Pick Another</a>
         </div>
-    </div>
-
+      </div>
 </body>
 </html>
